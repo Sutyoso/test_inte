@@ -233,13 +233,10 @@ public class KitchenSinkController {
                         } else {
                             String t2 = doc.select("#detikdetailtext .lihatjg").text();
                             String[] tx = t.split(t2);
-                            // messages.add(new TextMessage(tx[0]));
-                            // messages.add(new TextMessage(tx[tx.length - 1]));
                         }
 
                     }
                 }
-
 
                 this.reply(
                 replyToken,
@@ -266,7 +263,6 @@ public class KitchenSinkController {
                         storedText.put(tArr[1],inputText);
                         this.replyText(replyToken,"OK");
                     }
-
                 }
                 break;
             }
@@ -376,22 +372,6 @@ public class KitchenSinkController {
                     this.replyText(replyToken,"Saat ini sedang berada di status Noboss.");
                 }else{
                     this.replyText(replyToken,"Saat ini sedang berada di status Boss.");
-                }
-                break;
-            }
-            case "keys": {
-                if(!bossStat){
-                    String res = "";
-
-                    for (String key : storedText.keySet()) {
-                        res += key + "\n";
-                    }
-
-                    if (res.length() > 0) {
-                        this.replyText(replyToken, res);
-                    }else {
-                        this.replyText(replyToken, "Tidak ada datang yang disimpan.");
-                    }
                 }
                 break;
             }
