@@ -292,7 +292,7 @@ public class KitchenSinkController {
 				connection.ignoreContentType(true);
 				String content = connection.execute().body();
 				JSONObject jsonObject = new JSONObject(content);
-				String items = jsonObject.get("items").toString();
+				Message items = jsonObject.get("items").toString();
 				
 				this.reply(
                         replyToken,
