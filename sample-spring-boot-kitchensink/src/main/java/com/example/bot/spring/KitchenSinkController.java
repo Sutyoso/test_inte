@@ -380,10 +380,11 @@ public class KitchenSinkController {
                     if (storedText.size() > 0) {
                         String res = "";
 
+                        int counter_key = 1;
                         for (String key : storedText.keySet()) {
-                            res += key + " ";
+                            res += counter_key + ". " + key + "\n\r";
+                            counter_key++;
                         }
-                        res = res.trim();
                         this.replyText(replyToken, res);
                     }else {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
