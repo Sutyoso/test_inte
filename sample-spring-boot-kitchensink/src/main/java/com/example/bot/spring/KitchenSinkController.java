@@ -284,15 +284,15 @@ public class KitchenSinkController {
 				}
 				break;
 			}
-			case "boss": {
-				bossStat = true;
-				this.replyText(
-                        replyToken,
-						"ASDF"
+			// case "boss": {
+				// bossStat = true;
+				// this.replyText(
+                        // replyToken,
+						// "ASDF"
 	
-					);
-                break;
-			}
+					// );
+                // break;
+			// }
 			case "noboss": {
 				bossStat = false;
 				this.replyText(replyToken,"OK bosqu");
