@@ -351,7 +351,7 @@ public class KitchenSinkController {
                                 this.replyText(replyToken, "Operator salah");
                             }
                         } catch(NumberFormatException e){
-                            this.replyText(replyToken,"Operand yang dimasukkan bukan merupakan bilangan.");
+                            this.replyText(replyToken,"Operand yang dimasukkan bukan merupakan bilangan")
                         }
                     }
                 }
