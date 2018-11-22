@@ -201,7 +201,7 @@ public class KitchenSinkController {
         String text = content.getText();
         String[] tArr = text.split(" ");
         String t = tArr[0].toLowerCase();
-        // log.info("Got text message from {}: {}", replyToken, text);
+        log.info("Got text message from {}: {}", replyToken, text);
 
         String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
         URL obj = new URL(url);
