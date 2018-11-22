@@ -385,8 +385,8 @@ public class KitchenSinkController {
                         //     res += counter_key + ". " + key + "\n\r";
                         //     counter_key++;
                         // }
-                        
-                        this.replyText(replyToken, storedText.keySet());
+
+                        this.replyText(replyToken, String.join(",", storedText.keySet()));
                     }else {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
                     }
