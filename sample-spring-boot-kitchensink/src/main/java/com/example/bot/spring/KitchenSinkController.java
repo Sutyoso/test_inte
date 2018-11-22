@@ -327,26 +327,31 @@ public class KitchenSinkController {
                     if (tArr.length < 4) {
                         this.replyText(replyToken, "calc [operand1][spasi][operator][spasi][operand2]");
                     } else {
-                        if (tArr[2].equals("+")) {
-                            result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
-                            this.replyText(replyToken, result + "");
-                        } else if (tArr[2].equals("-")) {
-                            result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
-                            this.replyText(replyToken, result + "");
-                        } else if (tArr[2].equals("*")) {
-                            result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
-                            this.replyText(replyToken, result + "");
-                        } else if (tArr[2].equals("/")) {
-							if(tArr[3].equals("0")){
-								this.replyText(replyToken, "Penyebut tidak boleh 0");
-							}
-							else{
-								result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
+                        try {
+					Double.parseDouble(tmp);
+				
+							if (tArr[2].equals("+")) {
+								result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
 								this.replyText(replyToken, result + "");
+							} else if (tArr[2].equals("-")) {
+								result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
+								this.replyText(replyToken, result + "");
+							} else if (tArr[2].equals("*")) {
+								result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
+								this.replyText(replyToken, result + "");
+							} else if (tArr[2].equals("/")) {
+								if(tArr[3].equals("0")){
+									this.replyText(replyToken, "Penyebut tidak boleh 0");
+								}
+								else{
+									result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
+									this.replyText(replyToken, result + "");
+								}
+							} else {
+								this.replyText(replyToken, "Operator salah");
 							}
-                        } else {
-                            this.replyText(replyToken, "Operator salah");
-                        }
+						} catch (NumberFormatException e) {
+				}
                     }
                 }
                 break;
