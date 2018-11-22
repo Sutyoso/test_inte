@@ -239,8 +239,8 @@ public class KitchenSinkController {
 
                     }
                 }
-				
-				
+
+
                 this.reply(
                 replyToken,
                 messages
@@ -321,37 +321,38 @@ public class KitchenSinkController {
                 }
                 break;
             }
-			case "calc": {
+            case "calc": {
                 if (!bossStat) {
                     double result = 0;
                     if (tArr.length < 4) {
                         this.replyText(replyToken, "calc [operand1][spasi][operator][spasi][operand2]");
                     } else {
-                        try {
-					Double.parseDouble(tmp);
-				
-							if (tArr[2].equals("+")) {
-								result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
-								this.replyText(replyToken, result + "");
-							} else if (tArr[2].equals("-")) {
-								result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
-								this.replyText(replyToken, result + "");
-							} else if (tArr[2].equals("*")) {
-								result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
-								this.replyText(replyToken, result + "");
-							} else if (tArr[2].equals("/")) {
-								if(tArr[3].equals("0")){
-									this.replyText(replyToken, "Penyebut tidak boleh 0");
-								}
-								else{
-									result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
-									this.replyText(replyToken, result + "");
-								}
-							} else {
-								this.replyText(replyToken, "Operator salah");
-							}
-						} catch (NumberFormatException e) {
-				}
+                        try{
+                            Double.parseDouble(tArr[1]);
+                            Double.parseDouble(tArr[3]);
+                            if (tArr[2].equals("+")) {
+                                result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
+                                this.replyText(replyToken, result + "");
+                            } else if (tArr[2].equals("-")) {
+                                result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
+                                this.replyText(replyToken, result + "");
+                            } else if (tArr[2].equals("*")) {
+                                result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
+                                this.replyText(replyToken, result + "");
+                            } else if (tArr[2].equals("/")) {
+                                if(tArr[3].equals("0")){
+                                    this.replyText(replyToken, "Penyebut tidak boleh 0");
+                                }
+                                else{
+                                    result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
+                                    this.replyText(replyToken, result + "");
+                                }
+                            } else {
+                                this.replyText(replyToken, "Operator salah");
+                            }
+                        } catch(NumberFormatException e){
+                            this.replyText(replyToken,"Operand yang dimasukkan bukan merupakan bilangan")
+                        }
                     }
                 }
                 break;
@@ -365,7 +366,7 @@ public class KitchenSinkController {
 								"5. Profile - Command ini berfungsi untuk menampilkan nama dan status pengguna." + "\n" +
 								"6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator." + "\n" +
 								"7. Status - Command untuk memeriksa status yang sedang digunakan.");
-				
+
                 }
               break;
             }
