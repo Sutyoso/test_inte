@@ -329,7 +329,7 @@ public class KitchenSinkController {
                     } else {
                         try{
                             Double.parseDouble(tArr[1]);
-                            Double.parseDouble(tArr[2]);
+                            Double.parseDouble(tArr[3]);
                             if (tArr[2].equals("+")) {
                                 result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
                                 this.replyText(replyToken, result + "");
@@ -350,8 +350,9 @@ public class KitchenSinkController {
                             } else {
                                 this.replyText(replyToken, "Operator salah");
                             }
-                        } catch(NumberFormatException e)
-                        this.replyText(replyToken, "Operand bukan merupakan bilangan.");
+                        } catch(NumberFormatException e){
+                            this.replyText(replyToken, "Operand bukan merupakan bilangan.");
+                        }
                     }
                 }
                 break;
@@ -366,7 +367,6 @@ public class KitchenSinkController {
                     "6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator." + "\n" +
                     "7. Keys - Command untuk memeriksa semua kata kunci yang disimpan." + "\n" +
                     "8. Status - Command untuk memerika mode yang sedang digunakan.");
-
                 }
                 break;
             }
