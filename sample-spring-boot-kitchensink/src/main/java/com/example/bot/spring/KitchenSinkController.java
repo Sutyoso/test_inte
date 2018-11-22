@@ -397,9 +397,8 @@ public class KitchenSinkController {
                 if(!bossStat){
                     this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
                 }
+                break;
             }
-            break;
-
         }
     }
 
