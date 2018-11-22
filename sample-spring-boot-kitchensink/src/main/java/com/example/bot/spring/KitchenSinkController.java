@@ -378,15 +378,7 @@ public class KitchenSinkController {
             case "keys": {
                 if(!bossStat){
                     if (storedText.size() > 0) {
-                        // String res = "";
-
-                        // int counter_key = 1;
-                        // for (String key : storedText.keySet()) {
-                        //     res += counter_key + ". " + key + "\n\r";
-                        //     counter_key++;
-                        // }
-
-                        this.replyText(replyToken, String.join(",", storedText.keySet()));
+                        this.replyText(replyToken, String.join(", ", storedText.keySet()));
                     }else {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
                     }
