@@ -366,7 +366,8 @@ public class KitchenSinkController {
                     "5. Profile - Command ini berfungsi untuk menampilkan nama dan status pengguna." + "\n" +
                     "6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator." + "\n" +
                     "7. Keys - Command untuk memeriksa semua kata kunci yang disimpan." + "\n" +
-                    "8. Status - Command untuk memerika mode yang sedang digunakan.");
+                    "8. Status - Command untuk memerika mode yang sedang digunakan." + "\n" +
+                    "9. Bye - Command untuk mengeluarkan bot dari chat group.");
                 }
                 break;
             }
