@@ -321,15 +321,6 @@ public class KitchenSinkController {
 							messages.add(new TextMessage(tx[0]));
 							messages.add(new TextMessage(tx[tx.length - 1]));
 							//System.out.println(tx[0] + tx[tx.length - 1]);
-							this.reply(
-                        replyToken,
-                        new TextMessage(tx[0])
-					);
-							
-							this.reply(
-                        replyToken,
-                        new TextMessage(tx[tx.length - 1])
-					);
 						}
 
 					}
