@@ -375,6 +375,22 @@ public class KitchenSinkController {
                 }
                 break;
             }
+            case "keys": {
+                if(!bossStat){
+                    String res = "";
+
+                    for (String key : storedText.keySet()) {
+                        res += key + "\n";
+                    }
+
+                    if (res.length() > 0) {
+                        this.replyText(replyToken, res);
+                    }else {
+                        this.replyText(replyToken, "Tidak ada datang yang disimpan.");
+                    }
+                }
+                break;
+            }
             default: {
                 if(!bossStat){
                     this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
