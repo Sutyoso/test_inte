@@ -380,7 +380,7 @@ public class KitchenSinkController {
                     String res = "";
 
                     for (String key : storedText.keySet()) {
-                        res += key + "\n";
+                        res += key + " ";
                     }
 
                     if (res.length() > 0) {
