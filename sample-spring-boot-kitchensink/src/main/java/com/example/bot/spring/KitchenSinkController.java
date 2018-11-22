@@ -203,41 +203,41 @@ public class KitchenSinkController {
         String t = tArr[0].toLowerCase();
         log.info("Got text message from {}: {}", replyToken, text);
 
-        String url = "http://apis.detik.com/v1/indeks?limit=500&channelid=10&gt={0:yyyy-MM-dd%20HH:mm:ss}&lt={1:yyyy-MM-dd%20HH:mm:ss}";
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        con.setRequestMethod("GET");
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
-        String inputLine;
-        StringBuilder response = new StringBuilder();
-        while ((inputLine = in.readLine()) != null){
-            response.append(inputLine);
-        }
-        in.close();
-        JSONObject myResponse = new JSONObject(response.toString());
-        String aa = myResponse.get("data").toString();
-        String bb = aa.substring(1, aa.length() - 1);
-        JSONObject jj = new JSONObject(bb);
-        String m = jj.getString("url");
-        Document doc = Jsoup.connect(m).get();
-        Elements links = doc.select("#detikdetailtext");
-        String message = "";
-        LinkedList<Message> messages = new LinkedList<Message>();
-        for (Element link : links) {
-            if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
-                message = doc.select("#detikdetailtext").text();
-                messages.add(new TextMessage(message));
-                if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
-                } else {
-                    String t2 = doc.select("#detikdetailtext .lihatjg").text();
-                    String[] tx = t.split(t2);
-                }
-            }
-        }
-
         switch (t) {
             case "boss": {
                 bossStat = true;
+
+                String url = "http://apis.detik.com/v1/indeks?limit=500&channelid=10&gt={0:yyyy-MM-dd%20HH:mm:ss}&lt={1:yyyy-MM-dd%20HH:mm:ss}";
+                URL obj = new URL(url);
+                HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+                con.setRequestMethod("GET");
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null){
+                    response.append(inputLine);
+                }
+                in.close();
+                JSONObject myResponse = new JSONObject(response.toString());
+                String aa = myResponse.get("data").toString();
+                String bb = aa.substring(1, aa.length() - 1);
+                JSONObject jj = new JSONObject(bb);
+                String m = jj.getString("url");
+                Document doc = Jsoup.connect(m).get();
+                Elements links = doc.select("#detikdetailtext");
+                String message = "";
+                LinkedList<Message> messages = new LinkedList<Message>();
+                for (Element link : links) {
+                    if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
+                        message = doc.select("#detikdetailtext").text();
+                        messages.add(new TextMessage(message));
+                        if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
+                        } else {
+                            String t2 = doc.select("#detikdetailtext .lihatjg").text();
+                            String[] tx = t.split(t2);
+                        }
+                    }
+                }
 
                 this.reply(
                 replyToken,
@@ -248,13 +248,13 @@ public class KitchenSinkController {
             }
             case "noboss": {
                 bossStat = false;
-                this.replyText(replyToken,"OK");
+                this.replyText(replyToken,"OK.");
                 break;
             }
             case "save": {
                 if(!bossStat){
                     if(tArr.length<3){
-                        this.replyText(replyToken,"Data yang diberikan kurang lengkap");
+                        this.replyText(replyToken,"Data yang diberikan kurang lengkap.");
                     }
                     else{
                         String inputText = "";
@@ -262,7 +262,7 @@ public class KitchenSinkController {
                             inputText += tArr[i]+" ";
                         }
                         storedText.put(tArr[1],inputText);
-                        this.replyText(replyToken,"OK");
+                        this.replyText(replyToken,"OK.");
                     }
                 }
                 break;
@@ -274,7 +274,7 @@ public class KitchenSinkController {
                         r = storedText.get(tArr[1])+"";
                     }
                     else{
-                        r = "Kata Kunci Pencarian Tidak Ditemukan";
+                        r = "Kata Kunci Pencarian Tidak Ditemukan.";
                     }
                     this.replyText(replyToken,r);
                 }
@@ -301,20 +301,20 @@ public class KitchenSinkController {
 
                     });
                 } else {
-                    this.replyText(replyToken, "User ID tidak tersedia");
+                    this.replyText(replyToken, "User ID tidak tersedia.");
                 }
                 break;
             }
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
-                    this.replyText(replyToken, "Byeee");
+                    this.replyText(replyToken, "Byeee.");
                     lineMessagingClient.leaveGroup(((GroupSource) source).getGroupId()).get();
                 } else if (source instanceof RoomSource) {
-                    this.replyText(replyToken, "Byeee");
+                    this.replyText(replyToken, "Byeee.");
                     lineMessagingClient.leaveRoom(((RoomSource) source).getRoomId()).get();
                 } else {
-                    this.replyText(replyToken, "Tidak dapat meninggalkan chat 1:1");
+                    this.replyText(replyToken, "Tidak dapat meninggalkan chat 1:1.");
                 }
                 break;
             }
@@ -338,14 +338,14 @@ public class KitchenSinkController {
                                 this.replyText(replyToken, result + "");
                             } else if (tArr[2].equals("/")) {
                                 if(tArr[3].equals("0")){
-                                    this.replyText(replyToken, "Penyebut tidak boleh 0");
+                                    this.replyText(replyToken, "Penyebut tidak boleh 0.");
                                 }
                                 else{
                                     result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
                                     this.replyText(replyToken, result + "");
                                 }
                             } else {
-                                this.replyText(replyToken, "Operator salah");
+                                this.replyText(replyToken, "Operator salah.");
                             }
                         } catch(NumberFormatException e){
                             this.replyText(replyToken, "Operand bukan merupakan bilangan.");
@@ -381,14 +381,14 @@ public class KitchenSinkController {
                     if (storedText.size() > 0) {
                         this.replyText(replyToken, String.join(", ", storedText.keySet()));
                     }else {
-                        this.replyText(replyToken, "Tidak ada datang yang disimpan.");
+                        this.replyText(replyToken, "Tidak ada data yang disimpan.");
                     }
                 }
                 break;
             }
             default: {
                 if(!bossStat){
-                    this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
+                    this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help.");
                 }
                 break;
             }
