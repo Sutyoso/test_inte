@@ -305,25 +305,34 @@ public class KitchenSinkController {
 				Elements links = doc.select("#detikdetailtext");
 				String message = "";
 				LinkedList<Message> messages = new LinkedList<Message>();
-        for (Element link : links) {
-            if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
-               // System.out.println(link.attr("id")); //keluarannya nama id "detikdetailtext"
-                message = doc.select("#detikdetailtext").text();
-				messages.add(new TextMessage(message));
-                if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
-                    //System.out.println(t);
-                } else {
-                    String t2 = doc.select("#detikdetailtext .lihatjg").text();
-                    //System.out.println(t2);
-                    String[] tx = t.split(t2);
-					//message = tx[0] + tx[tx.length - 1];
-					messages.add(new TextMessage(tx[0]));
-					messages.add(new TextMessage(tx[tx.length - 1]));
-                    //System.out.println(tx[0] + tx[tx.length - 1]);
-                }
+				for (Element link : links) {
+					if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
+					   // System.out.println(link.attr("id")); //keluarannya nama id "detikdetailtext"
+						message = doc.select("#detikdetailtext").text();
+						messages.add(new TextMessage(message));
+						if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
+							//System.out.println(t);
+						} else {
+							String t2 = doc.select("#detikdetailtext .lihatjg").text();
+							//System.out.println(t2);
+							String[] tx = t.split(t2);
+							//message = tx[0] + tx[tx.length - 1];
+							messages.add(new TextMessage(tx[0]));
+							messages.add(new TextMessage(tx[tx.length - 1]));
+							//System.out.println(tx[0] + tx[tx.length - 1]);
+							this.reply(
+                        replyToken,
+                        new TextMessage(tx[0])
+					);
+							
+							this.reply(
+                        replyToken,
+                        new TextMessage(tx[tx.length - 1])
+					);
+						}
 
-            }
-        }
+					}
+				}
 				//JSONArray arr = myResponse.getJSONArray("items");
 				
 				
