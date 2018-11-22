@@ -233,13 +233,14 @@ public class KitchenSinkController {
                         } else {
                             String t2 = doc.select("#detikdetailtext .lihatjg").text();
                             String[] tx = t.split(t2);
-                            messages.add(new TextMessage(tx[0]));
-                            messages.add(new TextMessage(tx[tx.length - 1]));
+                            // messages.add(new TextMessage(tx[0]));
+                            // messages.add(new TextMessage(tx[tx.length - 1]));
                         }
 
                     }
                 }
-
+				
+				
                 this.reply(
                 replyToken,
                 messages
@@ -362,7 +363,19 @@ public class KitchenSinkController {
                 }
               break;
             }
-            default: this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
+			case "status": {
+				if(!bossStat){
+					this.replyText(replyToken,"Saat ini sedang berada di status Noboss.");
+				}else{
+					this.replyText(replyToken,"Saat ini sedang berada di status Boss.");
+				}
+				break;
+			}
+            default: {
+				if(!bossStat){
+					this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
+				}
+			}
             break;
 
         }
