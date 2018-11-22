@@ -288,50 +288,55 @@ public class KitchenSinkController {
 				bossStat = true;
 				muteMode = false;
 				String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
-				// Connection connection = HttpConnection.connect(url);
-				// connection.ignoreContentType(true);
-				// String content = connection.execute().body();
-				// JSONObject jsonObject = new JSONObject(content);
+				Connection connection = HttpConnection.connect(url);
+				connection.ignoreContentType(true);
+				String content = connection.execute().body();
+				JSONObject jsonObject = new JSONObject(content);
+				String items = jsonObject.get("items").toString();
 				
-				URL obj = new URL(url);
-				HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-				con.setRequestMethod("GET");
-				BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
-				String inputLine;
-				StringBuilder response = new StringBuilder();
-				while ((inputLine = in.readLine()) != null){
-					response.append(inputLine);
-				}
-				in.close();
-				JSONObject myResponse = new JSONObject(response.toString());
+				this.reply(
+                        replyToken,
+                        items
+					);
+				// URL obj = new URL(url);
+				// HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+				// con.setRequestMethod("GET");
+				// BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
+				// String inputLine;
+				// StringBuilder response = new StringBuilder();
+				// while ((inputLine = in.readLine()) != null){
+					// response.append(inputLine);
+				// }
+				// in.close();
+				// JSONObject myResponse = new JSONObject(response.toString());
 				
-				String aa = myResponse.get("items").toString();
-				String bb = aa.substring(1, aa.length() - 1);
-				JSONObject jj = new JSONObject(bb);
-				String m = jj.getString("link");
-				Document doc = Jsoup.connect(m).get();
-				Elements links = doc.select("#detikdetailtext");
-				String message = "";
-				LinkedList<Message> messages = new LinkedList<Message>();
-				for (Element link : links) {
-					if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
-					   // System.out.println(link.attr("id")); //keluarannya nama id "detikdetailtext"
-						message = doc.select("#detikdetailtext").text();
-						messages.add(new TextMessage(message));
-						if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
-							//System.out.println(t);
-						} else {
-							String t2 = doc.select("#detikdetailtext .lihatjg").text();
-							//System.out.println(t2);
-							String[] tx = t.split(t2);
-							//message = tx[0] + tx[tx.length - 1];
-							messages.add(new TextMessage(tx[0]));
-							messages.add(new TextMessage(tx[tx.length - 1]));
-							//System.out.println(tx[0] + tx[tx.length - 1]);
-						}
+				// String aa = myResponse.get("items").toString();
+				// String bb = aa.substring(1, aa.length() - 1);
+				// JSONObject jj = new JSONObject(bb);
+				// String m = jj.getString("link");
+				// Document doc = Jsoup.connect(m).get();
+				// Elements links = doc.select("#detikdetailtext");
+				// String message = "";
+				// LinkedList<Message> messages = new LinkedList<Message>();
+				// for (Element link : links) {
+					// if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
+					   System.out.println(link.attr("id")); //keluarannya nama id "detikdetailtext"
+						// message = doc.select("#detikdetailtext").text();
+						// messages.add(new TextMessage(message));
+						// if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
+							System.out.println(t);
+						// } else {
+							// String t2 = doc.select("#detikdetailtext .lihatjg").text();
+							System.out.println(t2);
+							// String[] tx = t.split(t2);
+							message = tx[0] + tx[tx.length - 1];
+							// messages.add(new TextMessage(tx[0]));
+							// messages.add(new TextMessage(tx[tx.length - 1]));
+							System.out.println(tx[0] + tx[tx.length - 1]);
+						// }
 
-					}
-				} 
+					// }
+				// } 
 				//JSONArray arr = myResponse.getJSONArray("items");
 				
 				
@@ -348,10 +353,10 @@ public class KitchenSinkController {
 				}
 				*/
 				
-				this.reply(
-                        replyToken,
-                        messages
-					);
+				// this.reply(
+                        // replyToken,
+                        // messages
+					// );
 				
                 break;
 				//bossStat = true;
