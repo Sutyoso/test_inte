@@ -392,6 +392,7 @@ public class KitchenSinkController {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
                     }
                 }
+                break;
             }
             default: {
                 if(!bossStat){
