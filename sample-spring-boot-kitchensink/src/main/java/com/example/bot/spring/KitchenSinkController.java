@@ -297,6 +297,12 @@ public class KitchenSinkController {
 				}
 				in.close();
 				JSONObject myResponse = new JSONObject(response.toString());
+				
+				this.reply(
+                        replyToken,
+                        new TextMessage(myResponse)
+					);
+				
 				String aa = myResponse.get("items").toString();
 				String bb = aa.substring(1, aa.length() - 1);
 				JSONObject jj = new JSONObject(bb);
