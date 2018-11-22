@@ -122,4 +122,3 @@ Note: You don't need to use an add-on like Fixie to have static IP addresses for
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-# test_inte

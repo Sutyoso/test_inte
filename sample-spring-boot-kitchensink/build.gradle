@@ -20,6 +20,4 @@ dependencies {
     compile project(':line-bot-spring-boot')
 	compile 'org.json:json:20160212'
 	compile 'org.jsoup:jsoup:1.11.1'
-	compile 'postgresql:postgresql:42.1.1'
-
 }
