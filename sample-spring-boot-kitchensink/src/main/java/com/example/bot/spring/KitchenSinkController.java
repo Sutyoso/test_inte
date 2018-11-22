@@ -383,7 +383,7 @@ public class KitchenSinkController {
                         for (String key : storedText.keySet()) {
                             res += key + " ";
                         }
-
+                        res = res.trim();
                         this.replyText(replyToken, res);
                     }else {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
