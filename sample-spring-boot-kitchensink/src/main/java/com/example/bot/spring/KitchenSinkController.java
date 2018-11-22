@@ -377,13 +377,13 @@ public class KitchenSinkController {
             }
             case "keys": {
                 if(!bossStat){
-                    String res = "";
+                    if (storedText.size() > 0) {
+                        String res = "";
 
-                    for (String key : storedText.keySet()) {
-                        res += key + " ";
-                    }
+                        for (String key : storedText.keySet()) {
+                            res += key + " ";
+                        }
 
-                    if (res.length() > 0) {
                         this.replyText(replyToken, res);
                     }else {
                         this.replyText(replyToken, "Tidak ada datang yang disimpan.");
