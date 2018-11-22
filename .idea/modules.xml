@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.linecorp.bot.lbw_bot.iml" filepath="$PROJECT_DIR$/.idea/modules/com.linecorp.bot.lbw_bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.test.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-api-client/com.linecorp.bot.line-bot-api-client.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-model/com.linecorp.bot.line-bot-model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.main.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.test.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-servlet/com.linecorp.bot.line-bot-servlet.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/line-bot-spring-boot/com.linecorp.bot.line-bot-spring-boot.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-echo/com.linecorp.bot.sample-spring-boot-echo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-spring-boot-kitchensink/com.linecorp.bot.sample-spring-boot-kitchensink.test.iml" />
+    </modules>
+  </component>
+</project>

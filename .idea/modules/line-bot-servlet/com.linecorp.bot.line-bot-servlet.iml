@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":line-bot-servlet" external.linked.project.path="$MODULE_DIR$/../../../line-bot-servlet" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.linecorp.bot" external.system.module.version="1.11.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../line-bot-servlet">
+      <excludeFolder url="file://$MODULE_DIR$/../../../line-bot-servlet/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../line-bot-servlet/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../line-bot-servlet/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

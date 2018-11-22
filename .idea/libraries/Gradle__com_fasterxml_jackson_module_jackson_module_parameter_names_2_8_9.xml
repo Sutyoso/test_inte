@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.8.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.8.9/e6b417c7b4ad4e259992ee5a63b028dde19dd506/jackson-module-parameter-names-2.8.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.8.9/e7bcff335d6cfe141aa51a1d2f61bcb5c32b2df/jackson-module-parameter-names-2.8.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

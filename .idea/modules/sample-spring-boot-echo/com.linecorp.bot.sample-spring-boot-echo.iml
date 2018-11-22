@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":sample-spring-boot-echo" external.linked.project.path="$MODULE_DIR$/../../../sample-spring-boot-echo" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.linecorp.bot" external.system.module.version="1.11.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../sample-spring-boot-echo">
+      <excludeFolder url="file://$MODULE_DIR$/../../../sample-spring-boot-echo/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../sample-spring-boot-echo/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../sample-spring-boot-echo/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
