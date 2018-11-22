@@ -203,7 +203,7 @@ public class KitchenSinkController {
         String t = tArr[0].toLowerCase();
         log.info("Got text message from {}: {}", replyToken, text);
 
-        String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
+        String url = "http://apis.detik.com/v1/indeks?limit=500&channelid=10&gt={0:yyyy-MM-dd%20HH:mm:ss}&lt={1:yyyy-MM-dd%20HH:mm:ss}";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
@@ -215,10 +215,10 @@ public class KitchenSinkController {
         }
         in.close();
         JSONObject myResponse = new JSONObject(response.toString());
-        String aa = myResponse.get("items").toString();
+        String aa = myResponse.get("data").toString();
         String bb = aa.substring(1, aa.length() - 1);
         JSONObject jj = new JSONObject(bb);
-        String m = jj.getString("link");
+        String m = jj.getString("url");
         Document doc = Jsoup.connect(m).get();
         Elements links = doc.select("#detikdetailtext");
         String message = "";
