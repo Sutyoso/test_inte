@@ -51,6 +51,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.jsoup.Connection;
+import org.jsoup.helper.HttpConnection;
 
 import com.linecorp.bot.model.action.DatetimePickerAction;
 import com.linecorp.bot.model.message.template.*;
@@ -286,6 +288,11 @@ public class KitchenSinkController {
 				bossStat = true;
 				muteMode = false;
 				String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
+				// Connection connection = HttpConnection.connect(url);
+				// connection.ignoreContentType(true);
+				// String content = connection.execute().body();
+				// JSONObject jsonObject = new JSONObject(content);
+				
 				URL obj = new URL(url);
 				HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 				con.setRequestMethod("GET");
@@ -324,7 +331,7 @@ public class KitchenSinkController {
 						}
 
 					}
-				}
+				} 
 				//JSONArray arr = myResponse.getJSONArray("items");
 				
 				
