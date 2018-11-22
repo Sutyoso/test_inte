@@ -239,8 +239,8 @@ public class KitchenSinkController {
 
                     }
                 }
-
-
+				
+				
                 this.reply(
                 replyToken,
                 messages
@@ -321,37 +321,31 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "calc": {
+			case "calc": {
                 if (!bossStat) {
                     double result = 0;
                     if (tArr.length < 4) {
                         this.replyText(replyToken, "calc [operand1][spasi][operator][spasi][operand2]");
                     } else {
-                        try{
-                            Double.parseDouble(tArr[1]);
-                            Double.parseDouble(tArr[3]);
-                            if (tArr[2].equals("+")) {
-                                result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
-                                this.replyText(replyToken, result + "");
-                            } else if (tArr[2].equals("-")) {
-                                result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
-                                this.replyText(replyToken, result + "");
-                            } else if (tArr[2].equals("*")) {
-                                result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
-                                this.replyText(replyToken, result + "");
-                            } else if (tArr[2].equals("/")) {
-                                if(tArr[3].equals("0")){
-                                    this.replyText(replyToken, "Penyebut tidak boleh 0");
-                                }
-                                else{
-                                    result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
-                                    this.replyText(replyToken, result + "");
-                                }
-                            } else {
-                                this.replyText(replyToken, "Operator salah");
-                            }
-                        } catch(NumberFormatException e){
-                            this.replyText(replyToken,"Operand yang dimasukkan bukan merupakan bilangan")
+                        if (tArr[2].equals("+")) {
+                            result = Double.parseDouble(tArr[1]) + Double.parseDouble(tArr[3]);
+                            this.replyText(replyToken, result + "");
+                        } else if (tArr[2].equals("-")) {
+                            result = Double.parseDouble(tArr[1]) - Double.parseDouble(tArr[3]);
+                            this.replyText(replyToken, result + "");
+                        } else if (tArr[2].equals("*")) {
+                            result = Double.parseDouble(tArr[1]) * Double.parseDouble(tArr[3]);
+                            this.replyText(replyToken, result + "");
+                        } else if (tArr[2].equals("/")) {
+							if(tArr[3].equals("0")){
+								this.replyText(replyToken, "Penyebut tidak boleh 0");
+							}
+							else{
+								result = Double.parseDouble(tArr[1]) / Double.parseDouble(tArr[3]);
+								this.replyText(replyToken, result + "");
+							}
+                        } else {
+                            this.replyText(replyToken, "Operator salah");
                         }
                     }
                 }
@@ -359,47 +353,29 @@ public class KitchenSinkController {
             }
             case "help":{
                 if (!bossStat) {
-                    this.replyText(replyToken, "1. Boss - Command ini berfungsi untuk menampilkan teks berita secara random dan mematikan fungsi command lain." + "\n" +
-                    "2. Noboss - Command ini adalah kebalikan dari command boss, yaitu untuk mengaktifkan kembali fungsi semua command yang ada." + "\n" +
-                    "3. Save - Command ini terdiri atas 2 parameter yaitu key dan value untuk menyimpan data yang diinginkan." + "\n" +
-                    "4. Load - Command ini terdiri atas 1 parameter yaitu key yang akan mengembalikan value sesuai dengan key yang dimasukan." + "\n" +
-                    "5. Profile - Command ini berfungsi untuk menampilkan nama dan status pengguna." + "\n" +
-                    "6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator." + "\n" +
-                    "7. Status - Command untuk memeriksa status yang sedang digunakan." + "\n" +
-                    "8. Keys - Command untuk menampilkan semua kata kunci data yang tersimpan.");
-
+					this.replyText(replyToken, "1. Boss - Command ini berfungsi untuk menampilkan teks berita secara random dan mematikan fungsi command lain." + "\n" +
+								"2. Noboss - Command ini adalah kebalikan dari command boss, yaitu untuk mengaktifkan kembali fungsi semua command yang ada." + "\n" +
+								"3. Save - Command ini terdiri atas 2 parameter yaitu key dan value untuk menyimpan data yang diinginkan." + "\n" +
+								"4. Load - Command ini terdiri atas 1 parameter yaitu key yang akan mengembalikan value sesuai dengan key yang dimasukan." + "\n" +
+								"5. Profile - Command ini berfungsi untuk menampilkan nama dan status pengguna." + "\n" +
+								"6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator.");
+				
                 }
-                break;
+              break;
             }
-            case "status": {
-                if(!bossStat){
-                    this.replyText(replyToken,"Saat ini sedang berada di status Noboss.");
-                }else{
-                    this.replyText(replyToken,"Saat ini sedang berada di status Boss.");
-                }
-                break;
-            }
-            case "keys": {
-                if(!bossStat){
-                    String res = "";
-
-                    for ( String key : storedText.keySet() ) {
-                        res += "key " + "/n";
-                    }
-
-                    if(res.length()  > 1){
-                        this.replyText(replyToken, res);
-                    }else{
-                        this.replyText(replyToken, "Tidak terdapat data yang tersimpan.");
-                    }
-                }
-                break;
-            }
+			case "status": {
+				if(!bossStat){
+					this.replyText(replyToken,"Saat ini sedang berada di status Noboss.");
+				}else{
+					this.replyText(replyToken,"Saat ini sedang berada di status Boss.");
+				}
+				break;
+			}
             default: {
-                if(!bossStat){
-                    this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help.");
-                }
-            }
+				if(!bossStat){
+					this.replyText(replyToken, "Untuk mengetahui semua command yang ada, silahkan ketik help");
+				}
+			}
             break;
 
         }
