@@ -201,42 +201,43 @@ public class KitchenSinkController {
         String text = content.getText();
         String[] tArr = text.split(" ");
         String t = tArr[0].toLowerCase();
-        log.info("Got text message from {}: {}", replyToken, text);
+        // log.info("Got text message from {}: {}", replyToken, text);
+
+        String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while ((inputLine = in.readLine()) != null){
+            response.append(inputLine);
+        }
+        in.close();
+        JSONObject myResponse = new JSONObject(response.toString());
+        String aa = myResponse.get("items").toString();
+        String bb = aa.substring(1, aa.length() - 1);
+        JSONObject jj = new JSONObject(bb);
+        String m = jj.getString("link");
+        Document doc = Jsoup.connect(m).get();
+        Elements links = doc.select("#detikdetailtext");
+        String message = "";
+        LinkedList<Message> messages = new LinkedList<Message>();
+        for (Element link : links) {
+            if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
+                message = doc.select("#detikdetailtext").text();
+                messages.add(new TextMessage(message));
+                if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
+                } else {
+                    String t2 = doc.select("#detikdetailtext .lihatjg").text();
+                    String[] tx = t.split(t2);
+                }
+            }
+        }
+
         switch (t) {
             case "boss": {
                 bossStat = true;
-                String url = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.detik.com%2Findex.php%2Fdetikcom";
-                URL obj = new URL(url);
-                HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-                con.setRequestMethod("GET");
-                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream() , "UTF-8"));
-                String inputLine;
-                StringBuilder response = new StringBuilder();
-                while ((inputLine = in.readLine()) != null){
-                    response.append(inputLine);
-                }
-                in.close();
-                JSONObject myResponse = new JSONObject(response.toString());
-                String aa = myResponse.get("items").toString();
-                String bb = aa.substring(1, aa.length() - 1);
-                JSONObject jj = new JSONObject(bb);
-                String m = jj.getString("link");
-                Document doc = Jsoup.connect(m).get();
-                Elements links = doc.select("#detikdetailtext");
-                String message = "";
-                LinkedList<Message> messages = new LinkedList<Message>();
-                for (Element link : links) {
-                    if (link.attr("id").equalsIgnoreCase("detikdetailtext")) {
-                        message = doc.select("#detikdetailtext").text();
-                        messages.add(new TextMessage(message));
-                        if (doc.select("#detikdetailtext .lihatjg").isEmpty()) {
-                        } else {
-                            String t2 = doc.select("#detikdetailtext .lihatjg").text();
-                            String[] tx = t.split(t2);
-                        }
-
-                    }
-                }
 
                 this.reply(
                 replyToken,
@@ -362,7 +363,7 @@ public class KitchenSinkController {
                     "5. Profile - Command ini berfungsi untuk menampilkan nama dan status pengguna." + "\n" +
                     "6. Calc - Command ini terdiri atas 3 parameter yaitu [operand1], [operator], dan [operand2] yang berfungsi sebagai kalkulator." + "\n" +
                     "7. Keys - Command untuk memeriksa semua kata kunci yang disimpan." + "\n" +
-                    "8. Status - Command untuk memerika mode yang sedang digunakan." + "\n" +
+                    "8. Status - Command untuk memeriksa mode yang sedang digunakan." + "\n" +
                     "9. Bye - Command untuk mengeluarkan bot dari chat group.");
                 }
                 break;
