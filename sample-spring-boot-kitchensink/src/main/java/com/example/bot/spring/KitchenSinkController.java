@@ -206,12 +206,10 @@ public class KitchenSinkController {
         switch (t) {
             case "boss": {
                 bossStat = true;
-
-                String message = "Raja Ampat adalah tempat yang bagus.";
                
                 this.replyText(
                 replyToken,
-                message
+                "Raja Ampat adalah tempat yang bagus."
                 );
 
                 break;
