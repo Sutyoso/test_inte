@@ -207,8 +207,7 @@ public class KitchenSinkController {
             case "boss": {
                 bossStat = true;
 
-                String message = "
-                Raja Ampat - Pemandu wisata, anggota Himpunan Pramuwisata Indonesia Kabupaten Raja Ampat, Provinsi Papua Barat, menemukan 11 bangkai hiu terapung di atas sebuah rakit di perairan Kepulauan Pam Waigeo Barat. Bangkai hiu yang sudah membusuk dan tidak ada lagi kulit dan siripnya itu ditemukan oleh seorang pramuwisata bernama Mecu Saleo. Saya melakukan aktivitas di perairan Kepulauan Pam dan beritahu kepada teman-teman (guide) yang lainnya agar disampaikan kepada pihak terkait, kata Mecu, di Waisai, sebagaimana dikutip dari Antara, Jumat (23/11/2018). Mecu Saleo mengatakan penemuan bangkai hiu tersebut pada Kamis 22 November sore saat melintas dengan kapal kecil di perairan Kepulauan Pam, tepatnya di Tanjung Piaynemo. Ia melihat ada dua rakit kecil terapung tanpa ada orang. Dia mengatakan, penasaran dengan rakit tanpa tuan tersebut dia langsung menghampiri dan kaget melihat 11 bangkai hiu yang sudah membusuk. Saya langsung foto bangkai hiu tersebut untuk dilaporkan kepada pihak terkait serta viralkan. Setelah foto bangkai tersebut langsung dibuang karena sudah membusuk dan rakitnya dibawa ke daratan, ujarnya. Menurut dia, bangkai hiu tersebut hanya tinggal daging kulit dan siripnya sudah diambil. Bangkai tersebut sudah mengeluarkan bau tak sedap yang diperkirakan ditangkap tiga hari yang lalu. Kami berharap ada pengawasan yang ketat oleh pemerintah di kawasan perairan Kepulauan Pam karena banyak anak hiu yang disenangi wisatawan saat berkunjung ke Raja Ampat, tambah dia.";
+                String message = "Raja Ampat adalah tempat yang bagus.";
                
                 this.replyText(
                 replyToken,
